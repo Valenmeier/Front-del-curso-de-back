@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--letterColor);
+  margin-bottom: 8vw;
+  gap: 2vw;
+}
+.container div {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container div h3,
+.container div a {
+  font-size: 6vw;
+  text-decoration: none;
+  color: var(--letterColor);
+  cursor: pointer;
+}
+.container div h2 {
+  padding-bottom: 1vw;
+  
+  font-size: 7vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  cursor: pointer;
+}
+@media (min-width: 970px) {
+  .container{
+    margin-top: 1vw;
+    margin-bottom: 4vw;
+  }
+  .container div h3,
+  .container div a {
+    font-size: 3vw;
+    text-decoration: none;
+    color: var(--letterColor);
+    cursor: pointer;
+  }
+  .container div h2 {
+    font-size: 3vw;
+  }
+}

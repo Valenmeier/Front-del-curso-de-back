@@ -1,0 +1,111 @@
+.videoFondo {
+  display: none;
+}
+.homeContainer {
+  height: 88vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--backgroundColor);
+}
+.imageContainer {
+  width: 50vw;
+  height: 65vw;
+  position: relative;
+  overflow: hidden;
+  animation: inicioMovimiento 2s linear infinite;
+}
+
+@keyframes inicioMovimiento {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 10vw);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.bienvenida {
+  color: var(--letterColor);
+  text-align: center;
+  height: 40vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.bienvenida a {
+  text-decoration: none;
+  background-color: var(--detailSecondColor);
+  padding: 5vw;
+  border-radius: 20vw;
+  color: var(--backgroundColor);
+}
+@media all and (min-width: 1024px) {
+  .videoFondo {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 88vh;
+    
+  }
+  .videoFondo video{
+    width: 100vw;
+    height: 88vh;
+    object-fit: cover;
+  }
+  .bienvenida {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+  }
+  .homeContainer {
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .imageContainer {
+    display: none;
+  }
+  .bienvenida a {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18vw;
+    height: 8vh;
+    font-size: 1.2vw;
+    transition: all 1s;
+    border: 0.2vw solid var(--detailSecondColor);
+  }
+  .bienvenida a:hover {
+    transform: scale(1.05);
+  }
+  .bienvenida h1 {
+    font-size: 3vw;
+    text-align: center;
+   
+    animation: sombraInicio 5s linear infinite;
+  }
+  @keyframes sombraInicio {
+    0%{
+      text-shadow: 0 0 20px var(--detailSecondColor);
+    }
+    50%{
+      text-shadow: 0 0 50px var(--detailSecondColor);
+    }
+    100%{
+      text-shadow: 0 0 20px var(--detailSecondColor);
+    }
+    
+  }
+}

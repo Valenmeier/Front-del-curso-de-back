@@ -1,0 +1,22 @@
+.footerModel {
+  width: 100vw;
+  height: 2vh;
+  background-color: rgb(65, 63, 65);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: var(--letterColor);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
+  align-items: center;
+  font-size: 1.1vw;
+  z-index: 40;
+}
+@media all and (min-width: 1024px) {
+  .footerModel {
+    height: 4vh;
+    font-size:.8vw;
+    opacity: .1;
+  }
+}

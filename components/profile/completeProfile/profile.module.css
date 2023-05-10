@@ -1,0 +1,13 @@
+.container {
+  width: 100vw;
+  height: 88vh;
+  background-color: var(--backgroundColor);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 4vw;
+}
+

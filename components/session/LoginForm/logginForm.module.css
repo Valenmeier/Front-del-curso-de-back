@@ -1,0 +1,140 @@
+.sessionContainer {
+  width: 100%;
+  height: 88vh;
+  background-color: rgb(2, 2, 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.vistaForm {
+  width: 80%;
+  height: 90%;
+  overflow: hidden;
+  display: flex;
+  background-color: rgb(145, 145, 146);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2vw;
+  flex-direction: column;
+}
+.login {
+  width: 100%;
+  height: 40%;
+  background-color: rgb(145, 145, 146);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 2vw;
+  flex-direction: column;
+}
+.login h2 {
+  font-size: 7vw;
+}
+.vistaForm div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3vw;
+  position: relative;
+}
+.vistaForm div a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all .5s;
+}
+.vistaForm div a:hover {
+  color: var(--detailColor);
+}
+.vistaForm div h4 {
+  font-size: 4vw;
+}
+.vistaForm form input {
+  border-radius: 4vw;
+  border: 0;
+  padding: 2vw;
+  width: 70vw;
+  height: 5vh;
+  font-size: 4vw;
+}
+.vistaForm form input:focus {
+  border: 0;
+  outline: 0;
+}
+
+.ojito {
+  position: absolute;
+  right: 0vw;
+  background-color: var(--letterColor);
+  border-radius: 4vw;
+  padding: 2vw;
+  width: 20%;
+  height: 100%;
+}
+#passwordInput {
+  padding-right: 20%;
+}
+
+.iniciarSesionBoton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw;
+  width: 70vw;
+  height: 5vh;
+  font-size: 4vw;
+  border-radius: 20vw;
+  border: none;
+  cursor: pointer;
+  background-color: var(--backgroundColor);
+  color: var(--letterColor);
+  box-shadow: 0vw 0vw 2vw var(--detailColor);
+  transition: all 1s;
+}
+.iniciarSesionBoton:hover {
+  transform: scale(1.1);
+}
+.redesSociales h5 {
+  font-size: 3.5vw;
+}
+
+@media all and (min-width: 1024px) {
+  .vistaForm {
+    width: 80%;
+  }
+  .login h2 {
+    font-size: 2vw;
+  }
+  .vistaForm div {
+    gap: 0.5vw;
+  }
+
+  .vistaForm div h4 {
+    font-size: 1.2vw;
+  }
+  .vistaForm form {
+    gap: 1vw;
+  }
+  .vistaForm form input {
+    padding: 1.5vw;
+    width: 40vw;
+    font-size: 0.8vw;
+  }
+  .ojito {
+    padding: 0.5vw;
+    cursor: pointer;
+  }
+  .iniciarSesionBoton {
+    width: 40vw;
+    height: 0.4vw;
+    margin-top: 1.5vw;
+    font-size: 1vw;
+  }
+  .redesSociales h5 {
+    font-size: 2vw;
+  }
+}

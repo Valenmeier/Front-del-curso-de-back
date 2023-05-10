@@ -1,0 +1,43 @@
+.container {
+  width: 100vw;
+  height: 88vh;
+  background-color: var(--backgroundColor);
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.infoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profileImage {
+  width: 40vw;
+  height: 40vw;
+  display: flex;
+  border-radius: 20vw;
+  background-color: rgb(167, 165, 165);
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+}
+.linkContainer {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+.profileText{
+  font-size: 19vw;
+}
+.cuentaPermisosContainer{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}

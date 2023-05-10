@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 88vh;
+  background-color: #000;
+  color: #fff;
+  gap: 8vw;
+  text-align: center;
+  font-size: 5vw;
+  position: relative;
+}
+.container input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6vw;
+  border-radius: 8vw;
+  padding: 4vw;
+  border: none;
+}
+.container input:focus {
+  outline: none;
+}
+.container button {
+  font-size: 6vw;
+  border-radius: 8vw;
+  padding: 3vw;
+  border: none;
+  transition: all 1s;
+}
+.container a {
+  text-decoration: none;
+  color: var(--detailSecondColor);
+  background-color: var(--backgroundColor);
+  box-shadow: 0 0 2vw var(--detailColor);
+  border-radius: 50vw;
+  padding: 8vw;
+  font-size: 5vw;
+  animation: 5s parpadeo linear infinite;
+}
+@keyframes parpadeo {
+  0% {
+    box-shadow: 0 0 2vw var(--detailColor);
+  }
+  25% {
+    box-shadow: 0 0 4vw var(--detailColor);
+  }
+  50% {
+    box-shadow: 0 0 10vw var(--detailColor);
+  }
+  75% {
+    box-shadow: 0 0 4vw var(--detailColor);
+  }
+  100% {
+    box-shadow: 0 0 2vw var(--detailColor);
+  }
+}
+
+@media all and (min-width: 1004px) {
+  .container {
+    font-size: 2vw;
+  }
+  .container input {
+    font-size: 3vw;
+    padding: 1vw;
+  }
+  .container button {
+    font-size: 3vw;
+    border-radius: 8vw;
+    padding: 1vw;
+    border: none;
+    cursor: pointer;
+  }
+  .container button:hover {
+    background-color: var(--detailColor);
+  }
+  .container a {
+    text-decoration: none;
+    font-size: 2vw;
+    padding: 4vw;
+  }
+}

@@ -1,0 +1,11 @@
+.productsContainer{
+    width: 100vw;
+    min-height: 88vh;
+    min-height: 88vh;
+    background-color: rgb(7, 7, 7);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+} 
+

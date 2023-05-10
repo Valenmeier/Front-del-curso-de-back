@@ -1,0 +1,20 @@
+.googleAccessButton {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 60vw;
+  height: 5vh;
+  font-size: 4vw;
+  border-radius: 5vw;
+}
+@media all and (min-width: 1024px) {
+  .googleAccessButton {
+    width: 30vw;
+    cursor: pointer;
+    font-size: .5vw;
+  }
+  .googleAccessButton svg{
+    font-size: 1vw;
+  }
+}

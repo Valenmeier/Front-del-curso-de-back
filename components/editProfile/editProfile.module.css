@@ -1,0 +1,22 @@
+.infoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 88vh;
+    background-color: var(--backgroundColor);
+}
+.profileImage {
+  width: 40vw;
+  height: 40vw;
+  display: flex;
+  border-radius: 20vw;
+  background-color: rgb(167, 165, 165);
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  text-align: center;
+}

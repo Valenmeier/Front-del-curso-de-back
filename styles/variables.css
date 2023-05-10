@@ -1,0 +1,7 @@
+:root {
+  --backgroundColor: #000;
+  --backgroundColorScale: rgba(0, 0, 0, 0.5);
+  --letterColor: #ffffff;
+  --detailColor: #00ffff;
+  --detailSecondColor:#e7cde1;
+}

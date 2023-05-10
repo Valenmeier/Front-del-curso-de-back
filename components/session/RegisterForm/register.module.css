@@ -1,0 +1,103 @@
+.registrerContainer {
+  width: 100%;
+  height: 88vh;
+  background-color: rgb(63, 5, 68);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fondoForm {
+  width: 60%;
+  height: 80vh;
+  background-color: rgb(12, 201, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fondoForm form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+}
+
+.registrerContainer form div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.registrerContainer input {
+  height: 5vw;
+  width: 20vw;
+  margin: 1vw;
+  padding: 1vw;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+}
+
+.registrerContainer form button {
+  height: 5vw;
+  width: 20vw;
+  margin: 1vw;
+  padding: 1vw;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+}
+
+.confirmarIngreso {
+  width: 42vw;
+  height: 3vw;
+  border-radius: 1vw;
+  margin-top: 2vw;
+  font-size: 1vw;
+  cursor: pointer;
+}
+
+.avisoContraseñas {
+  color: rgb(253, 2, 2);
+ 
+}
+
+.error {
+  color: rgb(253, 2, 2);
+  font-size: 2vw;
+}
+
+@media screen and (max-width: 1004px) {
+  .registrerContainer input {
+    height: 8vw;
+    width: 80vw;
+    font-size: 3vw;
+  }
+  .fondoForm {
+    width: 90%;
+  }
+  .fondoForm form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vw;
+  }
+  .fondoForm form div {
+    gap: 3vw;
+  }
+  .registrerContainer form button {
+    height: 8vw;
+    width: 80vw;
+    font-size: 2vw;
+  }
+
+  .confirmarIngreso {
+    width: 80vw;
+    height: 8vw;
+    font-size: 2vw;
+  }
+  
+}

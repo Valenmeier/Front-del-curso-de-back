@@ -1,5 +1,28 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css";
+import "@/styles/variables.css";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import DataContext from "../context/dataContext.js";
+import useDataWithToken from "../hooks/useDataWithToken.js";
+import { useState, useEffect } from "react";
+import hookToken from "@/hooks/hookToken.js";
+
+function MyApp({ Component, pageProps }) {
+  const cookieToken = hookToken();
+  const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    if (cookieToken) {
+      setToken(cookieToken);
+    }
+  }, [cookieToken]); 
+
+  const data = useDataWithToken(token);
+
+  return (
+    <DataContext.Provider value={{ ...data, token, setToken }}>
+      <Component {...pageProps} />
+    </DataContext.Provider>
+  );
 }
+
+export default MyApp;

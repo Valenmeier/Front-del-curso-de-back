@@ -1,0 +1,233 @@
+.filtersHandler {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--detailColor);
+  font-size: 15vw;
+}
+.filtersHandler h4 {
+  font-size: 8vw;
+}
+.filtersOff {
+  height: 0vh;
+  width: 100vw;
+  position: relative;
+  transition: all 1s;
+  display: none;
+}
+.filtersOn {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: var(--detailColor);
+  transition: all 1s;
+  overflow: hidden;
+}
+.filtersContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vw;
+}
+.filtersContainer h5 {
+  font-size: 6vw;
+}
+.filtersContainer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.filtersContainer div div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5vw;
+  margin-top: 4vw;
+}
+
+.filtersContainer div div h5 {
+  font-size: 5vw;
+  padding: 2vw;
+  border: 1vw solid var(--backgroundColor);
+  border-radius: 18vw;
+}
+.onOffFiltros {
+  text-decoration: none;
+  padding: 4vw;
+  margin-bottom: 5vw;
+  border-radius: 2vw;
+  border: 0.2vw solid var(--backgroundColor);
+  color: var(--letterColor);
+  background-color: var(--detailSecondColor);
+  font-size: 5vw;
+}
+.filtroActivo {
+  background-color: rgb(236, 162, 162);
+}
+.activarFiltros {
+  background-color: rgb(10, 129, 89);
+  margin-top: 5vw;
+}
+.desactivarFiltros {
+  background-color: red;
+}
+@media screen and (min-width: 540px) and (max-width: 1024px) {
+
+  .filtersOff {
+    height: 0vh;
+    width: 100vw;
+    position: relative;
+    transition: all 1s;
+    display: none;
+  }
+  .filtersOn {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 60vh;
+    background-color: var(--detailColor);
+    transition: all 1s;
+    overflow: hidden;
+  }
+  .filtersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vw;
+  }
+  .filtersContainer h5 {
+    font-size: 5vw;
+  }
+  .filtersContainer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .filtersContainer div div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3vw;
+    margin-top: 2vw;
+  }
+  
+  .filtersContainer div div h5 {
+    font-size: 3vw;
+    border: .3vw solid var(--backgroundColor);
+    border-radius: 18vw;
+  }
+  .onOffFiltros {
+    text-decoration: none;
+    padding: 2vw;
+    margin-bottom: 5vw;
+    border-radius: 2vw;
+    border: 0.2vw solid var(--backgroundColor);
+    color: var(--letterColor);
+    background-color: var(--detailSecondColor);
+    font-size: 3vw;
+  }
+  .filtroActivo {
+    background-color: rgb(236, 162, 162);
+  }
+  .activarFiltros {
+    background-color: rgb(10, 129, 89);
+    margin-top: 5vw;
+  }
+  .desactivarFiltros {
+    background-color: red;
+  }
+}
+@media all and (min-width: 1024px) {
+  .filtersHandler {
+    font-size: 5vw;
+    margin-top: 1vw;
+    margin-right: 2vw;
+  }
+  .filtersHandler svg {
+    cursor: pointer;
+  }
+  .filtersHandler h4 {
+    font-size: 2vw;
+  }
+  .filtersOff {
+    height: 0vh;
+    width: 100vw;
+    position: relative;
+    transition: all 1s;
+    display: none;
+  }
+  .filtersOn {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    min-height: 60vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--detailColor);
+    transition: all 1s;
+    overflow: hidden;
+  }
+  .filtersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    gap: 0;
+  }
+  .filtersContainer h5 {
+    font-size: 1.5vw;
+    align-self: center;
+  }
+  .filtersContainer div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+    width: 40vw;
+    margin-top: 2vw;
+  }
+  .filtersContainer div div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .filtersContainer div div h5 {
+    font-size: 1vw;
+    padding: 0.7vw;
+    border: 0.1vw solid var(--backgroundColor);
+    border-radius: 18vw;
+    cursor: pointer;
+  }
+  .onOffFiltros {
+    text-decoration: none;
+    padding: 1.2vw;
+    margin-bottom: 1vw;
+    border-radius: 2vw;
+    border: 0.2vw solid var(--backgroundColor);
+    color: var(--letterColor);
+    background-color: var(--detailSecondColor);
+    font-size: 1vw;
+  }
+  .filtroActivo {
+    background-color: rgb(236, 162, 162);
+  }
+  .activarFiltros {
+    background-color: rgb(10, 129, 89);
+  }
+  .desactivarFiltros {
+    background-color: red;
+  }
+}
