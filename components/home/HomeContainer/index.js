@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useData } from "@/context/dataContext";
 import Loader from "@/components/loader/Loader";
 import { ProfileButtons } from "@/components/common/profileButtons/ProfileButtons";
+import { preload } from "swr";
 
 const Index = () => {
   let user = useData();
@@ -13,7 +14,13 @@ const Index = () => {
   return (
     <>
       <div className={Styles.videoFondo}>
-        <video autoPlay loop muted src="/videos/fondoInicio.mp4"></video>
+        <video
+          autoPlay
+          loop
+          onLoad={preload}
+          muted
+          src="https://res.cloudinary.com/dyjpscesp/video/upload/v1683766011/fondoInicio_p1bm2i.mp4"
+        ></video>
       </div>
       <div className={Styles.homeContainer}>
         <div className={Styles.imageContainer}>

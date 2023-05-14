@@ -8,8 +8,8 @@ const Profile = () => {
   let [email, setEmail] = useState("Cargando...");
   let [profileImage, setProfileImage] = useState(null);
   let [autenticacion, setAutenticacion] = useState({
-    comprobanteDomicilio: true,
-    estadoCuenta: true,
+    comprobanteDomicilio: false,
+    estadoCuenta: false,
     identificacion: false,
   });
   let [needPremium, setNeedPremium] = useState(false);
@@ -18,11 +18,15 @@ const Profile = () => {
   useEffect(() => {
     if (!userData.isLoading) {
       let user = userData.userData.response.response;
+
       if (user.rol == "user") {
         setNeedPremium(true);
       }
       if (user.profileImage) {
         setProfileImage(user.profileImage);
+      }
+      if (user.documentsStatus) {
+        setAutenticacion(user.documentsStatus);
       }
       setEmail(user.email);
       setUsername(user.user);

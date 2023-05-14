@@ -9,17 +9,20 @@ import hookToken from "@/hooks/hookToken.js";
 function MyApp({ Component, pageProps }) {
   const cookieToken = hookToken();
   const [token, setToken] = useState(null);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     if (cookieToken) {
       setToken(cookieToken);
     }
-  }, [cookieToken]); 
+  }, [cookieToken]);
 
   const data = useDataWithToken(token);
 
   return (
-    <DataContext.Provider value={{ ...data, token, setToken }}>
+    <DataContext.Provider
+      value={{ userData, setUserData, ...data, token, setToken }}
+    >
       <Component {...pageProps} />
     </DataContext.Provider>
   );

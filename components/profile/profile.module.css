@@ -41,3 +41,13 @@
   flex-direction: column;
   gap: 2vw;
 }
+@media all and (min-width:1004px){
+  .profileImage{
+    width: 15vw;
+    height: 15vw;
+    font-size: 2vw;
+  }
+  .profileText{
+    font-size: 8.5vw;
+  }
+}
