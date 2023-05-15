@@ -6,6 +6,7 @@
     width: 100vw;
     height: 88vh;
     background-color: var(--backgroundColor);
+    gap: 8vw;
 }
 .profileImage {
   width: 40vw;
@@ -19,4 +20,11 @@
   align-items: center;
   font-size: 4vw;
   text-align: center;
+}
+@media all and (min-width:1004px){
+  .profileImage{
+    width: 20vw;
+    height: 20vw;
+    font-size: 2vw;
+  }
 }
