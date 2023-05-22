@@ -19,7 +19,7 @@ const Index = () => {
           loop
           onLoad={preload}
           muted
-          src="https://res.cloudinary.com/dyjpscesp/video/upload/v1683766011/fondoInicio_p1bm2i.mp4"
+          src="https://res.cloudinary.com/meiercloud/video/upload/v1683766011/fondoInicio_p1bm2i.mp4"
         ></video>
       </div>
       <div className={Styles.homeContainer}>

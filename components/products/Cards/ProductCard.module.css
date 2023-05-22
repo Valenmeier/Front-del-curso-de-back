@@ -36,7 +36,9 @@
 
 .notAvailable {
   background-color: #f44336;
+  z-index: 200;
   color: var(--letterColor);
+  border-radius: 1vw  0vw 0 1vw ;
 }
 
 .thumbnail {

@@ -1,32 +1,32 @@
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { password, token } = req.body;
+    const { token, cid } = req.body;
+
     try {
+      // Realiza una solicitud POST al servidor de Node.js utilizando fetch
       const response = await fetch(
-        `${process.env.DOMAIN_API_URL}/api/sessions/changePassword/${token}`,
+        `${process.env.DOMAIN_API_URL}/api/carts/${cid}/purchase`,
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            token: token,
           },
-          body: JSON.stringify({
-            contraseña: password,
-          }),
         }
       );
+
       if (response.ok) {
         // Si la respuesta es exitosa, extrae los datos
         const data = await response.json();
+        
         res.status(200).json(data);
       } else {
         // Si hay un error, devuelve el error al cliente
         const errorData = await response.json();
-
-        res.status(response.status).json({ response: errorData.response });
+        res.status(response.status).json(errorData);
       }
     } catch (error) {
+      console.log(error);
       // Si hay un error en la solicitud, devuelve un error 500 (Error interno del servidor)
-
       res.status(500).json({ message: "Error interno del servidor" });
     }
   } else {

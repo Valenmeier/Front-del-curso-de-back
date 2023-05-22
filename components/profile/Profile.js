@@ -18,7 +18,6 @@ const Profile = () => {
   useEffect(() => {
     if (!userData.isLoading) {
       let user = userData.userData.response.response;
-
       if (user.rol == "user") {
         setNeedPremium(true);
       }
@@ -41,7 +40,7 @@ const Profile = () => {
             <img
               src={profileImage}
               alt={`${username}-profilePicture`}
-              srcset=""
+              srcSet=""
             />
           ) : (
             <h2 className={Styles.profileText}>{username.slice(0, 1)}</h2>

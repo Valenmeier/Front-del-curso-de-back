@@ -1,0 +1,59 @@
+.cartContainer {
+  width: 100vw;
+  height: 88vh;
+  background-image: url("https://res.cloudinary.com/meiercloud/image/upload/v1684271964/fondoCarrito_oqfrze.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.informacion {
+  width: 100vw;
+  height: 88vh;
+  position: absolute;
+  z-index: 20;
+  color: var(--letterColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.informacion h4 {
+  font-size: 8vw;
+}
+.informacion a {
+    text-decoration: none;
+    background-color: var(--detailColor);
+    width: 50vw;
+    padding: 4vw;
+    border-radius: 20vw;
+    position: absolute;
+    bottom: 20vh;
+    color: var(--backgroundColor);
+    font-size: 4vw;
+}
+.capa {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  border-radius: 10px;
+  position: absolute;
+}
+@media all and (min-width:1004px){
+    .informacion h4{
+        font-size: 4vw;
+    }
+    .informacion a {
+        width: 30vw;
+        padding: 1.5vw;
+        font-size: 2vw;
+        bottom: 15vh;
+        transition: all .4s;
+    }
+    .informacion a:hover{
+        background-color: #e4a3e7;
+    }
+}

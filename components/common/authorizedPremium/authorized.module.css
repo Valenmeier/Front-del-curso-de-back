@@ -1,0 +1,21 @@
+.container {
+  width: 100vw;
+  height: 88vh;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  flex-direction: column;
+  text-align: center;
+  font-size: 8vw;
+  gap: 1vw;
+}
+.container a {
+  text-decoration: none;
+}
+@media all and (min-width: 1004px) {
+  .container {
+    font-size: 3vw;
+  }
+}

@@ -10,7 +10,8 @@ export const config = {
 
 const handler = async (req, res) => {
   try {
-    const { token, uid } = req.headers;
+    const { token } = req.headers;
+
     const formData = new FormData();
 
     for (const [key, value] of Object.entries(req.files)) {
@@ -26,8 +27,12 @@ const handler = async (req, res) => {
       formData.append(key, fileBlob, value.originalFilename);
     }
 
+    for (const key in req.body) {
+      formData.append(key, req.body[key]);
+    }
+
     const response = await axios.post(
-      `http://localhost:8080/api/users/${uid}/documents`,
+      `http://localhost:8080/api/products`,
       formData,
       {
         headers: {
@@ -39,7 +44,7 @@ const handler = async (req, res) => {
 
     res.status(response.status).json(response.data);
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(500).json({ status: "error", response: "Unhandled error" });
   }
 };

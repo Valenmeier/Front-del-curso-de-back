@@ -1,0 +1,87 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 25vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 30;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.monto {
+  width: 70%;
+  height: 45%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 0 0 10vw 10vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border: 0.2vh solid var(--detailSecondColor);
+}
+.buttonSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 55%;
+}
+.buttonSection button {
+  width: 40vw;
+  height: 12vw;
+  font-size: 3.5vw;
+  border: none;
+  border-radius: 4vw;
+}
+.montoTotalTitle {
+  color: var(--detailSecondColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  height: 30%;
+  border-bottom: 0.2vh solid var(--detailSecondColor);
+}
+.totalPrice {
+  color: var(--detailSecondColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68%;
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+}
+@media all and (min-width: 1004px) {
+  .monto {
+    width: 40%;
+  }
+  .buttonSection {
+    justify-content: space-between;
+    
+  }
+  .buttonSection button {
+    width: 20vw;
+    height: 6vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: all 1.2s;
+  }
+  .buttonSection button:first-child{
+    margin-left: 2vw;
+  }
+  .buttonSection button:first-child:hover{
+    background-color: rgb(241, 132, 132);
+  }
+  .buttonSection button:last-child{
+    margin-right: 2vw;
+  }
+  .buttonSection button:last-child:hover{
+    background-color: rgb(131, 199, 131);
+  }
+}

@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       }
     } catch (error) {
       // Si hay un error en la solicitud, devuelve un error 500 (Error interno del servidor)
-      console.log(error);
+
       res.status(500).json({ message: "Error interno del servidor" });
     }
   } else {

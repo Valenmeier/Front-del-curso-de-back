@@ -8,7 +8,7 @@ const EditProfile = () => {
   const [image, setImage] = useState(null);
   const dataUserCurrent = useData(); 
   const router = useRouter(); 
-  console.log(dataUserCurrent)
+
   const handleImageDrop = (imageFile) => {
     setImage(imageFile);
   };

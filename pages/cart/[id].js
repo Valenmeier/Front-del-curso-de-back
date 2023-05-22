@@ -1,15 +1,18 @@
-import ChatComponent from "@/components/chatComponent/ChatComponent";
+import React from "react";
+
 import GeneralLayout from "@/components/common/Layout/GeneralLayout";
 import Authorized from "@/components/common/authorized/authorized";
 
-const chat = () => {
+import CartComponent from "@/components/cartComponent/CartComponent";
+
+const CartId = () => {
   return (
     <GeneralLayout>
       <Authorized>
-        <ChatComponent />
+        <CartComponent />
       </Authorized>
     </GeneralLayout>
   );
 };
 
-export default chat;
+export default CartId;
