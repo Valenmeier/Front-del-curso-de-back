@@ -144,6 +144,30 @@
   height: 60px;
   animation: spin 1s linear infinite;
 }
+.eliminarProducto {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vw;
+}
+.eliminarProducto h4{
+  font-size: 2vw;
+}
+.eliminarProducto button{
+  font-size: 2vw;
+  padding: 1vw;
+  border-radius: 2vw;
+  background-color: rgb(236, 162, 162);
+  cursor: pointer;
+  border: none;
+  transition: all .5s;
+}
+.eliminarProducto button:hover{
+  background-color: rgb(222, 70, 70);
+  transform: scale(1.1);
+}
 
 @keyframes spin {
   0% {
@@ -154,7 +178,7 @@
   }
 }
 
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1004px) {
   .contenedorDetalles {
     flex-direction: column;
   }
@@ -172,13 +196,16 @@
   .stock {
     font-size: 2vw;
   }
-  .tituloProducto{
+  .tituloProducto {
     font-size: 4vw;
   }
-  .descripcionProducto h4{
+  .descripcionProducto h4 {
     font-size: 6vw;
   }
-  .descripcionProducto p{
+  .descripcionProducto p {
     font-size: 3vw;
+  }
+  .eliminarProducto h4{
+    font-size: 5vw;
   }
 }

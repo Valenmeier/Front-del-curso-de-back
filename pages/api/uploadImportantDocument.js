@@ -27,7 +27,7 @@ const handler = async (req, res) => {
     }
 
     const response = await axios.post(
-      `http://localhost:8080/api/users/${uid}/documents`,
+      `${process.env.DOMAIN_API_URL}/api/users/${uid}/documents`,
       formData,
       {
         headers: {
@@ -39,7 +39,6 @@ const handler = async (req, res) => {
 
     res.status(response.status).json(response.data);
   } catch (error) {
-    console.log(error)
     res.status(500).json({ status: "error", response: "Unhandled error" });
   }
 };

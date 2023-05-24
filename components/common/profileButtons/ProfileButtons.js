@@ -15,6 +15,7 @@ export const ProfileButtons = () => {
     setOpenMenu(!openMenu);
   };
   let user = useData();
+
   useEffect(() => {
     setId(user.userData.response.response.cart);
   }, [user]);
@@ -26,9 +27,16 @@ export const ProfileButtons = () => {
       <Link href={`/cart/${id}`} className={openMenu ? Styles.translate : ""}>
         <BsCart3 />
       </Link>
-      <Link href="/myProducts" className={openMenu ? Styles.translate : ""}>
-        <SiProducthunt />
-      </Link>
+      {user.userData.response.response.rol == "admin" ? (
+        <Link href="/panelAdmin" className={openMenu ? Styles.translate : ""}>
+          <SiProducthunt />
+        </Link>
+      ) : (
+        <Link href="/myProducts" className={openMenu ? Styles.translate : ""}>
+          <SiProducthunt />
+        </Link>
+      )}
+
       <section className={Styles.firstComponent} onClick={abrirMenu}>
         {openMenu ? <RxCross1 /> : <FaUserAlt />}
       </section>

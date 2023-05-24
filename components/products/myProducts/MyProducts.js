@@ -26,8 +26,8 @@ const MyProducts = () => {
         if (res.status === 400) {
           setMyProductResponse(<h5>{res.response}</h5>);
         } else if (res.status === 200) {
-          const info = res.response.map((product) => (
-            <MyProductsCards key={product.id} info={product} />
+          const info = res.response.map((product, i) => (
+            <MyProductsCards key={i} info={product} />
           ));
           setMyProductResponse(info);
         }

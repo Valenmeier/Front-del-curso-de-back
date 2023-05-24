@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     try {
       // Realiza una solicitud POST al servidor de Node.js utilizando fetch
       const response = await fetch(
-        "http://localhost:8080/api/sessions/logout",
+        `${process.env.DOMAIN_API_URL}/api/sessions/logout`,
         {
           method: "POST",
           headers: {

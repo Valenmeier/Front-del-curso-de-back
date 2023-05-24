@@ -3,11 +3,13 @@ import { useData } from "@/context/dataContext";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import Loader from "@/components/loader/Loader";
 
 const logout = () => {
   const data = useData();
   const router = useRouter();
   let [message, setMessage] = useState("Cerrando sesión");
+  let [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!data.isLoading) {
       let token = data.token;
@@ -23,20 +25,20 @@ const logout = () => {
         .then((res) => res.json())
         .then((res) => {
           if (res.status == 200) {
+            setLoading(false);
             data.setToken("");
             Cookies.remove("meierCommerceLoginCookie");
             setMessage("Sesión cerrada correctamente");
             router.push("/");
           } else {
+            setLoading(false);
             setMessage("Error al cerrar sesión");
           }
         });
     }
-  }, [data.isLoading, data.token]);
+  }, []);
   return (
-    <GeneralLayout>
-      <h2>{message}</h2>
-    </GeneralLayout>
+    <GeneralLayout>{loading ? <Loader /> : <h2>{message}</h2>}</GeneralLayout>
   );
 };
 

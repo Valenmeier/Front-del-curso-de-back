@@ -49,7 +49,7 @@ const Profile = () => {
       </section>
       <section>
         <h3>Username= {username} </h3>
-        <h3>Email= {email}</h3>
+        {email ? <h3>Email= {email}</h3> : ""}
       </section>
       {needPremium ? (
         <section className={Styles.cuentaPermisosContainer}>

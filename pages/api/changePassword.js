@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/sessions/updatePassword",
+        `${process.env.DOMAIN_API_URL}/api/sessions/updatePassword`,
         {
           method: "POST",
           headers: {

@@ -59,6 +59,23 @@ const ProductDetails = ({ data }) => {
       setLoader(false);
     }
   }, [user]);
+
+  let eliminarProducto = () => {
+    setLoader(true);
+    fetch("/api/deleteIndividualProduct", {
+      method: "POST",
+      headers: {
+        pid: data._id,
+        token: user.token,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setResponse(res.response);
+        setLoader(false);
+      });
+  };
+
   return (
     <>
       {loader ? (
@@ -101,8 +118,19 @@ const ProductDetails = ({ data }) => {
             </div>
             <div className={styles.botones}>
               {data.stock > 0 ? (
-                data.owner == user.userData.response.response.email ? (
-                 <h4>Este producto es tuyo, no puedes comprarlo</h4>
+                data.owner == user.userData.response.response.email ||
+                user.userData.response.response.rol == "admin" ? (
+                  <section className={styles.eliminarProducto}>
+                    {" "}
+                    {data.owner == user.userData.response.response.email ? (
+                      <h4>Este producto es tuyo</h4>
+                    ) : (
+                      ""
+                    )}
+                    <button onClick={eliminarProducto}>
+                      Eliminar producto
+                    </button>
+                  </section>
                 ) : (
                   <button
                     className={styles.compraBoton}

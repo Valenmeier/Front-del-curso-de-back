@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/users/premium/${uid}`,
+        `${process.env.DOMAIN_API_URL}/api/users/premium/${uid}`,
         {
           method: "PUT",
           headers: {

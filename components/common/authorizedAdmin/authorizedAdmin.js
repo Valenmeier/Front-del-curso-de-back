@@ -6,20 +6,16 @@ import { useState, useEffect } from "react";
 import Styles from "./authorized.module.css";
 import { ProfileButtons } from "../profileButtons/ProfileButtons";
 
-const AuthorizedPremium = ({ children }) => {
+const AuthorizedAdmin = ({ children }) => {
   const [loading, setloading] = useState(true);
-  let [authorized, setAuthorizedPremium] = useState(false);
+  let [authorized, setAuthorizedAdmin] = useState(false);
   let userData = useData();
- 
   useEffect(() => {
     if (!userData.isLoading) {
       setloading(false);
       if (userData.userData.response !== "usuario no encontrado") {
-        if (
-          userData.userData.response.response.rol == "premium" ||
-          userData.userData.response.response.rol == "admin"
-        ) {
-          setAuthorizedPremium(true);
+        if (userData.userData.response.response.rol == "admin") {
+          setAuthorizedAdmin(true);
         }
       }
     }
@@ -36,14 +32,14 @@ const AuthorizedPremium = ({ children }) => {
       ) : (
         <section className={Styles.container}>
           <h4>
-            Lo siento, no puedes acceder a este contenido, solo usuarios premium
+            Lo siento, no puedes acceder a este contenido, solo usuarios ADMIN
             pueden ingresar.
           </h4>
- 
+         
         </section>
       )}
     </>
   );
 };
 
-export default AuthorizedPremium;
+export default AuthorizedAdmin;

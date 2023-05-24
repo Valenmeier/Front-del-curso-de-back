@@ -42,7 +42,7 @@ const LoginForm = () => {
 
   async function loginWithGoogle() {
     try {
-      window.location.href = "http://localhost:8080/session/google";
+      window.location.href = `${process.env.DOMAIN_API_URL}/session/google`;
     } catch (error) {
       console.error("Error al iniciar sesión con Google");
     }
@@ -50,7 +50,7 @@ const LoginForm = () => {
 
   const loginWithGithub = async () => {
     try {
-      window.location.href = "http://localhost:8080/session/github";
+      window.location.href = `${process.env.DOMAIN_API_URL}/session/github`;
     } catch (error) {
       console.error("Error al iniciar sesión con GitHub");
     }

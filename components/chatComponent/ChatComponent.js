@@ -3,6 +3,7 @@ import io from "socket.io-client";
 import styles from "./ChatComponent.module.css";
 import { useData } from "@/context/dataContext";
 import { MdSend } from "react-icons/md";
+import AuthorizedPremium from "../common/authorizedPremium/authorizedPremium";
 
 const ChatComponent = () => {
   const [socket, setSocket] = useState(null);
@@ -13,7 +14,7 @@ const ChatComponent = () => {
   let user = useData();
 
   useEffect(() => {
-    const socketIo = io("http://localhost:8080");
+    const socketIo = io(`${process.env.DOMAIN_API_URL}`);
     setSocket(socketIo);
 
     socketIo.on("messages", (allMessages) => {
@@ -52,68 +53,70 @@ const ChatComponent = () => {
   };
 
   return (
-    <div className={styles.chatWrapper}>
-      <div className={styles.contenedorMsg}>
-        <div className={styles.contenedorChats}>
-          {mensajes.map((mensaje, index) => (
-            <div
-              key={index}
-              className={
-                mensaje.user === usuario
-                  ? styles.mensajePropio
-                  : styles.mensajeAjeno
-              }
-            >
-              <section className={styles.profileContainer}>
-                <span className={styles.profileImage}>
-                  {mensaje.profileImage ? (
-                    <img
-                      src={mensaje.profileImage}
-                      alt={`${mensaje.user} profile Image`}
-                    />
-                  ) : (
-                    <div className={styles.letterContainer}>
-                      <h4>{mensaje.user.slice(0, 1).toUpperCase()}</h4>
-                    </div>
-                  )}
-                </span>
-              </section>
-
-              <section className={styles.contenedorMensajesEnviados}>
-                <section className={styles.mensajeEnviado}>
-                  <h4>{mensaje.user}:</h4>
-                  <p>{mensaje.message}</p>
+    <AuthorizedPremium>
+      <div className={styles.chatWrapper}>
+        <div className={styles.contenedorMsg}>
+          <div className={styles.contenedorChats}>
+            {mensajes.map((mensaje, index) => (
+              <div
+                key={index}
+                className={
+                  mensaje.user === usuario
+                    ? styles.mensajePropio
+                    : styles.mensajeAjeno
+                }
+              >
+                <section className={styles.profileContainer}>
+                  <span className={styles.profileImage}>
+                    {mensaje.profileImage ? (
+                      <img
+                        src={mensaje.profileImage}
+                        alt={`${mensaje.user} profile Image`}
+                      />
+                    ) : (
+                      <div className={styles.letterContainer}>
+                        <h4>{mensaje.user.slice(0, 1).toUpperCase()}</h4>
+                      </div>
+                    )}
+                  </span>
                 </section>
-              </section>
+
+                <section className={styles.contenedorMensajesEnviados}>
+                  <section className={styles.mensajeEnviado}>
+                    <h4>{mensaje.user}:</h4>
+                    <p>{mensaje.message}</p>
+                  </section>
+                </section>
+              </div>
+            ))}
+          </div>
+          <div className={styles.vistaMsg}>
+            <div className={styles.cabecera}></div>
+            <div className={styles.chatMsg}>
+              <div className={styles.contenedorFlexibleMensajes}></div>
             </div>
-          ))}
-        </div>
-        <div className={styles.vistaMsg}>
-          <div className={styles.cabecera}></div>
-          <div className={styles.chatMsg}>
-            <div className={styles.contenedorFlexibleMensajes}></div>
+            <div className={styles.barraMsg}>
+              <form
+                className={styles.contenedorEnviarMensajes}
+                onSubmit={enviarMensaje}
+              >
+                <textarea
+                  className={styles.escribirMsg}
+                  placeholder="Ingrese su mensaje"
+                  value={mensajeActual}
+                  onChange={handleInputChange}
+                ></textarea>
+                <button type="submit" className={styles.enviarMensaje}>
+                  <MdSend />
+                </button>
+              </form>
+            </div>
+            <div className={styles.capaMsg}></div>
           </div>
-          <div className={styles.barraMsg}>
-            <form
-              className={styles.contenedorEnviarMensajes}
-              onSubmit={enviarMensaje}
-            >
-              <textarea
-                className={styles.escribirMsg}
-                placeholder="Ingrese su mensaje"
-                value={mensajeActual}
-                onChange={handleInputChange}
-              ></textarea>
-              <button type="submit" className={styles.enviarMensaje}>
-                <MdSend />
-              </button>
-            </form>
-          </div>
-          <div className={styles.capaMsg}></div>
         </div>
+        <div className={styles.capaWrapper}></div>
       </div>
-      <div className={styles.capaWrapper}></div>
-    </div>
+    </AuthorizedPremium>
   );
 };
 

@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         res.status(response.status).json(errorData);
       }
     } catch (error) {
-      console.log(error);
+     
       // Si hay un error en la solicitud, devuelve un error 500 (Error interno del servidor)
       res.status(500).json({ message: "Error interno del servidor" });
     }
