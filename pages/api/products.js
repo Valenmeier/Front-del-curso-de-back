@@ -30,7 +30,7 @@ const handler = async (req, res) => {
     for (const key in req.body) {
       formData.append(key, req.body[key]);
     }
-
+    
     const response = await axios.post(
       `${process.env.DOMAIN_API_URL}/api/products`,
       formData,
@@ -44,7 +44,6 @@ const handler = async (req, res) => {
 
     res.status(response.status).json(response.data);
   } catch (error) {
-    
     res.status(500).json({ status: "error", response: "Unhandled error" });
   }
 };
